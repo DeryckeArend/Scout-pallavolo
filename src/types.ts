@@ -99,7 +99,6 @@ export interface PlayerStats {
       m: number;  // -
       eq: number; // =
       total: number;
-      efficiency: number;
       positivity: number;
       successRate: number;
       errorRate: number;

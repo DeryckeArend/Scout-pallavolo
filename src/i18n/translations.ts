@@ -591,7 +591,6 @@ const es: TranslationKeys = {
   // Metric formulas
   report_formulas_title: 'F\u00f3rmulas M\u00e9tricas',
   report_formula_positivity: 'Pos%: ((++ + +) / Total) x 100',
-  report_formula_success_rate: 'SR%: ((++ + +) / Total) x 100',
   report_formula_error_rate: 'ER%: (= / Total) x 100',
   report_formula_net_efficiency: 'NE%: ((++ - - - =) / Total) x 100',
   report_formula_note: '++ = Excelente, + = Positivo, - = Negativo, = = Error',
@@ -633,7 +632,6 @@ const fr: TranslationKeys = {
   // Metric formulas
   report_formulas_title: 'Formules Metriques',
   report_formula_positivity: 'Pos%: ((++ + +) / Total) x 100',
-  report_formula_success_rate: 'SR%: ((++ + +) / Total) x 100',
   report_formula_error_rate: 'ER%: (= / Total) x 100',
   report_formula_net_efficiency: 'NE%: ((++ - - - =) / Total) x 100',
   report_formula_note: '++ = Excellent, + = Positif, - = Negatif, = = Erreur',
@@ -675,7 +673,6 @@ const de: TranslationKeys = {
   // Metric formulas
   report_formulas_title: 'Formeln',
   report_formula_positivity: 'Pos%: ((++ + +) / Gesamt) x 100',
-  report_formula_success_rate: 'SR%: ((++ + +) / Gesamt) x 100',
   report_formula_error_rate: 'ER%: (= / Gesamt) x 100',
   report_formula_net_efficiency: 'NE%: ((++ - - - =) / Gesamt) x 100',
   report_formula_note: '++ = Exzellent, + = Positiv, - = Negativ, = = Fehler',
@@ -717,7 +714,6 @@ const pt: TranslationKeys = {
   // Metric formulas
   report_formulas_title: 'F\u00f3rmulas M\u00e9tricas',
   report_formula_positivity: 'Pos%: ((++ + +) / Total) x 100',
-  report_formula_success_rate: 'SR%: ((++ + +) / Total) x 100',
   report_formula_error_rate: 'ER%: (= / Total) x 100',
   report_formula_net_efficiency: 'NE%: ((++ - - - =) / Total) x 100',
   report_formula_note: '++ = Excelente, + = Positivo, - = Negativo, = = Erro',

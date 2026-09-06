@@ -144,9 +144,7 @@ export default function StatsPage({ stats, matchStarted }: Props) {
                             {fs.eq > 0 && <div className="bg-red-500/60 h-full" style={{ width: `${(fs.eq / fs.total) * 100}%` }} />}
                           </div>
                           <span className="text-[10px] text-muted font-bold w-5 text-right">{fs.total}</span>
-                          <MetricBadge value={fs.efficiency} color="text-white" bg="bg-white/10" label="Efficiency" />
                           <MetricBadge value={fs.positivity} color="text-blue-400" bg="bg-blue-500/10" label="Positivity" />
-                          <MetricBadge value={fs.successRate} color="text-green-400" bg="bg-green-500/10" label="Success Rate" />
                           <MetricBadge value={fs.errorRate} color="text-red-400" bg="bg-red-500/10" label="Error Rate" />
                           <MetricBadge value={fs.netEfficiency} color="text-gold-400" bg="bg-gold-400/10" label="Net Efficiency" />
                         </div>
@@ -161,16 +159,14 @@ export default function StatsPage({ stats, matchStarted }: Props) {
             <div className="bg-surface-800 border border-surface-600/50 rounded-xl overflow-hidden">
               {/* Table header */}
               <div className="grid grid-cols-[32px_1fr_32px_32px_32px_32px_36px_36px_36px_36px_36px_36px] gap-0 px-2 py-2 bg-navy-800/50 text-[10px] font-bold text-muted-dark uppercase tracking-wider">
-                <span>N\u00b0</span>
+                <span>NR</span>
                 <span>{t.roster_player_name}</span>
                 <span className="text-center text-green-400">++</span>
                 <span className="text-center text-blue-400">+</span>
-                <span className="text-center text-yellow-400">\u2013</span>
+                <span className="text-center text-yellow-400">-</span>
                 <span className="text-center text-red-400">=</span>
                 <span className="text-center">{t.stats_total}</span>
-                <span className="text-center font-extrabold">Eff%</span>
                 <span className="text-center font-extrabold">Pos%</span>
-                <span className="text-center font-extrabold text-green-400">SR%</span>
                 <span className="text-center font-extrabold text-red-400">ER%</span>
                 <span className="text-center font-extrabold text-gold-400">NE%</span>
               </div>
@@ -195,21 +191,9 @@ export default function StatsPage({ stats, matchStarted }: Props) {
                       <span className="text-center text-white font-bold">{fs.total}</span>
                       <span className={cn(
                         "text-center font-extrabold",
-                        fs.efficiency >= 30 ? "text-green-400" : fs.efficiency >= 0 ? "text-white" : "text-red-400"
-                      )}>
-                        {fs.efficiency}%
-                      </span>
-                      <span className={cn(
-                        "text-center font-extrabold",
                         fs.positivity >= 50 ? "text-blue-400" : "text-yellow-400"
                       )}>
                         {fs.positivity}%
-                      </span>
-                      <span className={cn(
-                        "text-center font-extrabold",
-                        fs.successRate >= 50 ? "text-green-400" : "text-white"
-                      )}>
-                        {fs.successRate}%
                       </span>
                       <span className={cn(
                         "text-center font-extrabold",
