@@ -130,12 +130,12 @@ export function exportPDF(stats: PlayerStats[], match: MatchState, lang: string 
   let startY = 45;
 
   fundamentals.forEach((fund) => {
-    const head = [['No.', 'Name', '++', '+', '-', '=', 'Tot', 'Eff%', 'Pos%', 'SR%', 'ER%', 'NE%']];
+    const head = [['No.', 'Name', '++', '+', '-', '=', 'Tot', 'Pos%', 'SR%', 'ER%', 'NE%']];
     const body = stats
       .filter((s) => s.fundamentals[fund].total > 0)
       .map((s) => {
         const fs = s.fundamentals[fund];
-        return [s.playerNumber, s.playerName, fs.pp, fs.p, fs.m, fs.eq, fs.total, `${fs.efficiency}%`, `${fs.positivity}%`, `${fs.successRate}%`, `${fs.errorRate}%`, `${fs.netEfficiency}%`];
+        return [s.playerNumber, s.playerName, fs.pp, fs.p, fs.m, fs.eq, fs.total, `${fs.positivity}%`, `${fs.successRate}%`, `${fs.errorRate}%`, `${fs.netEfficiency}%`];
       });
 
     if (body.length === 0) return;
@@ -165,7 +165,7 @@ export function exportPDF(stats: PlayerStats[], match: MatchState, lang: string 
   doc.setFont('helvetica', 'bold');
   doc.text(summaryTitle, 14, startY);
 
-  const totHead = [['No.', 'Name', 'Role', '++', '+', '-', '=', 'Total', 'Eff%', 'Pos%', 'SR%', 'ER%', 'NE%']];
+  const totHead = [['No.', 'Name', 'Role', '++', '+', '-', '=', 'Total', 'Pos%', 'SR%', 'ER%', 'NE%']];
   const totBody = stats
     .filter((s) => s.totals.total > 0)
     .map((s) => {
@@ -184,13 +184,12 @@ export function exportPDF(stats: PlayerStats[], match: MatchState, lang: string 
         totalNet += fs.pp - fs.m - fs.eq;
       });
       
-      const overallEfficiency = totalForMetrics > 0 ? Math.round(((s.totals.pp - s.totals.m) / totalForMetrics) * 100) : 0;
       const overallPositivity = totalForMetrics > 0 ? Math.round(((s.totals.pp + s.totals.p) / totalForMetrics) * 100) : 0;
       const overallSuccessRate = totalForMetrics > 0 ? Math.round((totalSuccess / totalForMetrics) * 100) : 0;
       const overallErrorRate = totalForMetrics > 0 ? Math.round((totalErrors / totalForMetrics) * 100) : 0;
       const overallNetEfficiency = totalForMetrics > 0 ? Math.round((totalNet / totalForMetrics) * 100) : 0;
       
-      return [s.playerNumber, s.playerName, roleLabels[s.playerRole] || s.playerRole, s.totals.pp, s.totals.p, s.totals.m, s.totals.eq, s.totals.total, `${overallEfficiency}%`, `${overallPositivity}%`, `${overallSuccessRate}%`, `${overallErrorRate}%`, `${overallNetEfficiency}%`];
+      return [s.playerNumber, s.playerName, roleLabels[s.playerRole] || s.playerRole, s.totals.pp, s.totals.p, s.totals.m, s.totals.eq, s.totals.total, `${overallPositivity}%`, `${overallSuccessRate}%`, `${overallErrorRate}%`, `${overallNetEfficiency}%`];
     });
 
   autoTable(doc, {
@@ -202,8 +201,6 @@ export function exportPDF(stats: PlayerStats[], match: MatchState, lang: string 
     bodyStyles: { fontSize: 8 },
     margin: { left: 14 },
   });
-
-  doc.save(`scout_${match.info.homeTeam}_vs_${match.info.awayTeam}_${match.info.date || 'match'}.pdf`);
 
   // Add metric formulas as footer
   doc.addPage();
@@ -223,6 +220,8 @@ export function exportPDF(stats: PlayerStats[], match: MatchState, lang: string 
   formulaLines.forEach((line, i) => {
     doc.text(line, 14, 25 + (i * 8));
   });
+
+  doc.save(`scout_${match.info.homeTeam}_vs_${match.info.awayTeam}_${match.info.date || 'match'}.pdf`);
 }
 
 // WhatsApp-friendly plain text export
