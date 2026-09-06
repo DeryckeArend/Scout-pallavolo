@@ -208,17 +208,22 @@ export function exportPDF(stats: PlayerStats[], match: MatchState, lang: string 
   doc.setFont('helvetica', 'bold');
   doc.text(lang === 'it' ? 'Formule Metriche' : 'Metric Formulas', 14, 15);
   
-  doc.setFontSize(10);
+  doc.setFontSize(9);
   doc.setFont('helvetica', 'normal');
   const formulaLines = [
     (lang === 'it' ? 'Pos%: ((++ + +) / Totale) x 100' : 'Pos%: ((++ + +) / Total) x 100'),
-    (lang === 'it' ? 'SR%: ((++ + +) / Totale) x 100' : 'SR%: ((++ + +) / Total) x 100'),
+    (lang === 'it' ? 'Misura la percentuale di azioni positive. Indica il contributo positivo del giocatore.' : 'Measures percentage of positive actions. Shows player positive contribution.'),
+    '',
     (lang === 'it' ? 'ER%: (= / Totale) x 100' : 'ER%: (= / Total) x 100'),
+    (lang === 'it' ? 'Misura la percentuale di errori. Più basso è, meglio è.' : 'Measures percentage of errors. Lower is better.'),
+    '',
     (lang === 'it' ? 'NE%: ((++ - - - =) / Totale) x 100' : 'NE%: ((++ - - - =) / Total) x 100'),
+    (lang === 'it' ? 'Misura l\'efficienza netta. Premi eccellenti, penalizza errori e negativi.' : 'Measures net efficiency. Rewards excellent, penalizes mistakes and negatives.'),
+    '',
     (lang === 'it' ? '++ = Eccellente, + = Positivo, - = Negativo, = = Errore' : '++ = Excellent, + = Positive, - = Negative, = = Error')
   ];
   formulaLines.forEach((line, i) => {
-    doc.text(line, 14, 25 + (i * 8));
+    doc.text(line, 14, 25 + (i * 6));
   });
 
   doc.save(`scout_${match.info.homeTeam}_vs_${match.info.awayTeam}_${match.info.date || 'match'}.pdf`);
@@ -284,9 +289,14 @@ export function generateWhatsAppText(stats: PlayerStats[], match: MatchState, la
   const formulasTitle = lang === 'it' ? 'Formule Metriche' : 'Metric Formulas';
   lines.push(`*\ud83d\udcd3 ${formulasTitle}:*`);
   lines.push(lang === 'it' ? 'Pos%: ((++ + +) / Totale) x 100' : 'Pos%: ((++ + +) / Total) x 100');
-  lines.push(lang === 'it' ? 'SR%: ((++ + +) / Totale) x 100' : 'SR%: ((++ + +) / Total) x 100');
+  lines.push(lang === 'it' ? 'Misura la percentuale di azioni positive. Indica il contributo positivo del giocatore.' : 'Measures percentage of positive actions. Shows player positive contribution.');
+  lines.push('');
   lines.push(lang === 'it' ? 'ER%: (= / Totale) x 100' : 'ER%: (= / Total) x 100');
+  lines.push(lang === 'it' ? 'Misura la percentuale di errori. Più basso è, meglio è.' : 'Measures percentage of errors. Lower is better.');
+  lines.push('');
   lines.push(lang === 'it' ? 'NE%: ((++ - - - =) / Totale) x 100' : 'NE%: ((++ - - - =) / Total) x 100');
+  lines.push(lang === 'it' ? 'Misura l\'efficienza netta. Premi eccellenti, penalizza errori e negativi.' : 'Measures net efficiency. Rewards excellent, penalizes mistakes and negatives.');
+  lines.push('');
   lines.push(lang === 'it' ? '++ = Eccellente, + = Positivo, - = Negativo, = = Errore' : '++ = Excellent, + = Positive, - = Negative, = = Error');
 
   return lines.join('\n');

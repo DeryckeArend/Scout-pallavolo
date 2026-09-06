@@ -218,11 +218,13 @@ export default function SummaryPage({ stats, match, players, onResetMatch }: Pro
             <Calculator size={16} className="text-gold-400" />
             <p className="text-[10px] uppercase tracking-wider text-muted-dark font-bold">{t.report_formulas_title}</p>
           </div>
-          <div className="space-y-2 text-[11px] text-muted">
+          <div className="space-y-3 text-[11px] text-muted">
             <p><span className="text-gold-400 font-bold">Pos%</span>: {t.report_formula_positivity}</p>
-            <p><span className="text-gold-400 font-bold">SR%</span>: {t.report_formula_success_rate}</p>
+            <p className="text-[10px] text-muted-dark ml-4">{t.report_formula_positivity_desc}</p>
             <p><span className="text-gold-400 font-bold">ER%</span>: {t.report_formula_error_rate}</p>
+            <p className="text-[10px] text-muted-dark ml-4">{t.report_formula_error_rate_desc}</p>
             <p><span className="text-gold-400 font-bold">NE%</span>: {t.report_formula_net_efficiency}</p>
+            <p className="text-[10px] text-muted-dark ml-4">{t.report_formula_net_efficiency_desc}</p>
             <p className="text-[10px] text-muted-dark mt-2 italic">{t.report_formula_note}</p>
           </div>
         </div>

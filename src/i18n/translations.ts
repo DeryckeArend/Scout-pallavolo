@@ -183,9 +183,11 @@ export type TranslationKeys = {
   // Metric formulas
   report_formulas_title: string;
   report_formula_positivity: string;
-  report_formula_success_rate: string;
+  report_formula_positivity_desc: string;
   report_formula_error_rate: string;
+  report_formula_error_rate_desc: string;
   report_formula_net_efficiency: string;
+  report_formula_net_efficiency_desc: string;
   report_formula_note: string;
 };
 
@@ -361,9 +363,11 @@ const it: TranslationKeys = {
   // Metric formulas
   report_formulas_title: 'Formule Metriche',
   report_formula_positivity: 'Pos%: ((++ + +) / Totale) x 100',
-  report_formula_success_rate: 'SR%: ((++ + +) / Totale) x 100',
+  report_formula_positivity_desc: 'Misura la percentuale di azioni positive (++ e +) sul totale. Indica quanto il giocatore contribuisce positivamente.',
   report_formula_error_rate: 'ER%: (= / Totale) x 100',
+  report_formula_error_rate_desc: 'Misura la percentuale di errori (=) sul totale. Più basso è, meglio è.',
   report_formula_net_efficiency: 'NE%: ((++ - - - =) / Totale) x 100',
+  report_formula_net_efficiency_desc: 'Misura l\'efficienza netta: premi le azioni eccellenti (++), penalizza errori (-) e errori gravi (=). Il metro più completo.',
   report_formula_note: '++ = Eccellente, + = Positivo, - = Negativo, = = Errore',
 };
 
@@ -539,9 +543,11 @@ const en: TranslationKeys = {
   // Metric formulas
   report_formulas_title: 'Metric Formulas',
   report_formula_positivity: 'Pos%: ((++ + +) / Total) x 100',
-  report_formula_success_rate: 'SR%: ((++ + +) / Total) x 100',
+  report_formula_positivity_desc: 'Measures the percentage of positive actions (++ and +) out of total. Shows how much the player contributes positively.',
   report_formula_error_rate: 'ER%: (= / Total) x 100',
+  report_formula_error_rate_desc: 'Measures the percentage of errors (=) out of total. Lower is better.',
   report_formula_net_efficiency: 'NE%: ((++ - - - =) / Total) x 100',
+  report_formula_net_efficiency_desc: 'Measures net efficiency: rewards excellent actions (++), penalizes mistakes (-) and errors (=). The most comprehensive metric.',
   report_formula_note: '++ = Excellent, + = Positive, - = Negative, = = Error',
 };
 
