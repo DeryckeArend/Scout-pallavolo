@@ -67,11 +67,11 @@ export function exportCSV(stats: PlayerStats[], match: MatchState, lang: string 
 
   const header = [
     'No.', 'Name', 'Role',
-    `${fundLabels.ATT}++`, `${fundLabels.ATT}+`, `${fundLabels.ATT}-`, `${fundLabels.ATT}=`, `${fundLabels.ATT} Tot`, `${fundLabels.ATT} Eff%`, `${fundLabels.ATT} Pos%`, `${fundLabels.ATT} ER%`, `${fundLabels.ATT} NE%`,
-    `${fundLabels.DIF}++`, `${fundLabels.DIF}+`, `${fundLabels.DIF}-`, `${fundLabels.DIF}=`, `${fundLabels.DIF} Tot`, `${fundLabels.DIF} Eff%`, `${fundLabels.DIF} Pos%`, `${fundLabels.DIF} ER%`, `${fundLabels.DIF} NE%`,
-    `${fundLabels.MUR}++`, `${fundLabels.MUR}+`, `${fundLabels.MUR}-`, `${fundLabels.MUR}=`, `${fundLabels.MUR} Tot`, `${fundLabels.MUR} Eff%`, `${fundLabels.MUR} Pos%`, `${fundLabels.MUR} ER%`, `${fundLabels.MUR} NE%`,
-    `${fundLabels.BAT}++`, `${fundLabels.BAT}+`, `${fundLabels.BAT}-`, `${fundLabels.BAT}=`, `${fundLabels.BAT} Tot`, `${fundLabels.BAT} Eff%`, `${fundLabels.BAT} Pos%`, `${fundLabels.BAT} ER%`, `${fundLabels.BAT} NE%`,
-    `${fundLabels.RIC}++`, `${fundLabels.RIC}+`, `${fundLabels.RIC}-`, `${fundLabels.RIC}=`, `${fundLabels.RIC} Tot`, `${fundLabels.RIC} Eff%`, `${fundLabels.RIC} Pos%`, `${fundLabels.RIC} ER%`, `${fundLabels.RIC} NE%`,
+    `${fundLabels.ATT}++`, `${fundLabels.ATT}+`, `${fundLabels.ATT}-`, `${fundLabels.ATT}=`, `${fundLabels.ATT} Tot`, `${fundLabels.ATT} Pos%`, `${fundLabels.ATT} ER%`, `${fundLabels.ATT} NE%`,
+    `${fundLabels.DIF}++`, `${fundLabels.DIF}+`, `${fundLabels.DIF}-`, `${fundLabels.DIF}=`, `${fundLabels.DIF} Tot`, `${fundLabels.DIF} Pos%`, `${fundLabels.DIF} ER%`, `${fundLabels.DIF} NE%`,
+    `${fundLabels.MUR}++`, `${fundLabels.MUR}+`, `${fundLabels.MUR}-`, `${fundLabels.MUR}=`, `${fundLabels.MUR} Tot`, `${fundLabels.MUR} Pos%`, `${fundLabels.MUR} ER%`, `${fundLabels.MUR} NE%`,
+    `${fundLabels.BAT}++`, `${fundLabels.BAT}+`, `${fundLabels.BAT}-`, `${fundLabels.BAT}=`, `${fundLabels.BAT} Tot`, `${fundLabels.BAT} Pos%`, `${fundLabels.BAT} ER%`, `${fundLabels.BAT} NE%`,
+    `${fundLabels.RIC}++`, `${fundLabels.RIC}+`, `${fundLabels.RIC}-`, `${fundLabels.RIC}=`, `${fundLabels.RIC} Tot`, `${fundLabels.RIC} Pos%`, `${fundLabels.RIC} ER%`, `${fundLabels.RIC} NE%`,
     'TOT++', 'TOT+', 'TOT-', 'TOT=', 'Total',
   ];
 

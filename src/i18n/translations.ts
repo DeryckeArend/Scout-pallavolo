@@ -67,6 +67,8 @@ export type TranslationKeys = {
   scout_select_player: string;
   scout_new_set: string;
   scout_set: string;
+  scout_select_score_team: string;
+  scout_no_point: string;
   scout_point_home: string;
   scout_point_away: string;
   scout_no_actions: string;
@@ -369,6 +371,8 @@ const it: TranslationKeys = {
   report_formula_net_efficiency: 'NE%: ((++ - - - =) / Totale) x 100',
   report_formula_net_efficiency_desc: 'Misura l\'efficienza netta: premi le azioni eccellenti (++), penalizza errori (-) e errori gravi (=). Il metro più completo.',
   report_formula_note: '++ = Eccellente, + = Positivo, - = Negativo, = = Errore',
+  scout_select_score_team: "",
+  scout_no_point: ""
 };
 
 const en: TranslationKeys = {
@@ -549,6 +553,8 @@ const en: TranslationKeys = {
   report_formula_net_efficiency: 'NE%: ((++ - - - =) / Total) x 100',
   report_formula_net_efficiency_desc: 'Measures net efficiency: rewards excellent actions (++), penalizes mistakes (-) and errors (=). The most comprehensive metric.',
   report_formula_note: '++ = Excellent, + = Positive, - = Negative, = = Error',
+  scout_select_score_team: "Select score",
+  scout_no_point: "No point"
 };
 
 const es: TranslationKeys = {
